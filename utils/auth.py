@@ -17,3 +17,10 @@ def check_password():
         else:
             st.sidebar.error("😕 Password incorrect")
     return False
+
+def check_fairness(transactions_df):
+    """Basic fairness check - ensure no category dominates spending excessively"""
+    expense_ratios = transactions_df[transactions_df['Type'] == 'Expense'].groupby('Category')['Amount'].sum() / transactions_df['Amount'].sum()
+    if any(ratio > 0.5 for ratio in expense_ratios):  # If any category > 50%
+        return "Warning: Over-reliance on one spending category detected"
+    return "Spending distribution appears balanced"

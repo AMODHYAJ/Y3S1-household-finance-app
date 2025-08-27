@@ -41,3 +41,10 @@ def load_goals():
         return pd.read_csv('savings_goals.csv')
     except FileNotFoundError:
         return pd.DataFrame()  # Return an empty DataFrame
+    
+def load_savings_transactions():
+    """Loads savings contributions data."""
+    try:
+        return pd.read_csv('savings_transactions.csv')
+    except FileNotFoundError:
+        return pd.DataFrame()

@@ -1,3 +1,4 @@
+# app.py
 import streamlit as st
 from utils.auth import check_password
 
@@ -11,9 +12,10 @@ if not check_password():
 # If password is correct, show the main app
 st.title("🏠 Welcome to Your Financial Dashboard!")
 st.markdown("""
-Use the sidebar on the left to navigate through the app.
-*   **Dashboard:** See your overall financial health report.
-*   **Add Expense:** Log a new purchase.
-*   **Add Income:** Log new money received.
-*   **Savings Goals:** Set and track your financial goals.
+Use the sidebar on the left to navigate through the app:
+- **Dashboard:** See your overall financial health report.
+- **Add Expense:** Log a new purchase.
+- **Add Income:** Log new money received.
+- **Savings Goals:** Set and track your financial goals.
 """)
+

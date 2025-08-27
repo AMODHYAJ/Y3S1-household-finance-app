@@ -3,3 +3,4 @@ pandas
 openai
 plotly-express
 matplotlib
+google-generativeai
